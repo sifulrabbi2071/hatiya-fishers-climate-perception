@@ -1,0 +1,6 @@
+# Python packages for code/05_maps_shoreline.py and code/06_framework_diagram.py
+geopandas>=0.14
+pandas>=2.0
+numpy>=1.24
+matplotlib>=3.7
+shapely>=2.0

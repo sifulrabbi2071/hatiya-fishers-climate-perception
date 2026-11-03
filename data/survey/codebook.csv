@@ -1,0 +1,49 @@
+﻿variable,section,label,values
+questionnaire_id,Identifier,Questionnaire serial number (contains no personal information),1–150
+A2_age,Socio-demographic profile,Age (Years),1 = < 25; 2 = 25–35; 3 = 36–45; 4 = 46–55; 5 = > 55
+A3_education,Socio-demographic profile,Formal Education Level,1 = Illiterate; 2 = Can sign only; 3 = Primary (1–5); 4 = Secondary (6–10); 5 = Above SSC
+A4_occupation,Socio-demographic profile,Primary Fishing Occupation,1 = Deep Sea Fisher; 2 = Estuarine/Coastal; 3 = Seasonal Fisher; 4 = Fish Trader/Aratdar
+A5_experience,Socio-demographic profile,Fishing Experience (Years),1 = < 5 years; 2 = 5–10 years; 3 = 11–20 years; 4 = > 20 years
+A6_vessel,Socio-demographic profile,Vessel and Gear Ownership,1 = Own Motorized Boat; 2 = Own Non-motorized; 3 = Rented Boat; 4 = Boat Crew / Laborer
+A7_income,Socio-demographic profile,Average Monthly Income (BDT),"1 = < 10,000 BDT; 2 = 10,000–20,000 BDT; 3 = 20,001–30,000 BDT; 4 = > 30,000 BDT"
+A8_household,Socio-demographic profile,Household Family Size,1 = Small (1–4); 2 = Medium (5–7); 3 = Large (> 7)
+A9_credit,Socio-demographic profile,Primary Credit / Loan Source,1 = Aratdar/Mohajan (Dadon); 2 = NGO / Microfinance; 3 = Bank; 4 = None
+B1,"Local ecological knowledge (LEK), 5-point Likert",LEK1: Aware of climate change and local impacts,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B2,"Local ecological knowledge (LEK), 5-point Likert",LEK2: Traditional knowledge predicts storms,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B3,"Local ecological knowledge (LEK), 5-point Likert",LEK3: Understands govt cyclone warning signals,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B4,"Local ecological knowledge (LEK), 5-point Likert",LEK4: Indigenous knowledge locates Hilsa grounds,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B5,"Local ecological knowledge (LEK), 5-point Likert",LEK5: Early warnings reach in time to return safely,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B6,"Local ecological knowledge (LEK), 5-point Likert",LEK6: Lunar/tidal shifts more erratic than past,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B7,"Local ecological knowledge (LEK), 5-point Likert",LEK7: LEK passed down to younger generations,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B8,"Local ecological knowledge (LEK), 5-point Likert",LEK8: Modern forecasting tools more reliable than traditional cues,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B9,"Local ecological knowledge (LEK), 5-point Likert",LEK9: Water temp/turbidity affect fish migration/spawning,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+B10,"Local ecological knowledge (LEK), 5-point Likert",LEK10: Climate hazards increased occupational safety risk,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C1,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI1: Summer temperature/extreme heat increased,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C2,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI2: Rainfall patterns irregular/unpredictable,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C3,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI3: Cyclones/storms more frequent and intense,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C4,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI4: Riverbank erosion/coastal land loss worsened,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C5,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI5: Salinity intrusion increased,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C6,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI6: Fish stock (Hilsa) declined nearshore,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C7,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI7: Storm surge/tidal flooding heights increased,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C8,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI8: Siltation/riverbed elevation hindered navigation,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C9,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI9: Duration of cold winter season decreased,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+C10,"Climate perception (CPI), last 20–30 years, 5-point Likert",CPI10: Sudden rough sea conditions more frequent,1 = Strongly Disagree; 2 = Disagree; 3 = Neutral; 4 = Agree; 5 = Strongly Agree
+D1,"Adaptation strategies (ASI), frequency 1–5",ASI1: Carries radio/mobile/GPS for weather updates,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D2,"Adaptation strategies (ASI), frequency 1–5",ASI2: Uses life jackets/buoys/safety gear,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D3,"Adaptation strategies (ASI), frequency 1–5",ASI3: Upgraded boat engine/vessel capacity,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D4,"Adaptation strategies (ASI), frequency 1–5",ASI4: Modified fishing schedule/net mesh/target species,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D5,"Adaptation strategies (ASI), frequency 1–5",ASI5: Takes high-interest loans (Dadon)/microfinance for disaster recovery,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D6,"Adaptation strategies (ASI), frequency 1–5",ASI6: Engages in alternative off-season livelihoods,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D7,"Adaptation strategies (ASI), frequency 1–5",ASI7: Temporary seasonal migration to urban centers,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D8,"Adaptation strategies (ASI), frequency 1–5",ASI8: Participates in disaster preparedness/evacuation training,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D9,"Adaptation strategies (ASI), frequency 1–5",ASI9: Sells household assets to cope with climate shocks,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+D10,"Adaptation strategies (ASI), frequency 1–5",ASI10: Constructs elevated homesteads/flood-resistant structures,1 = Never; 2 = Rarely; 3 = Sometimes; 4 = Frequently; 5 = Always
+E1,"Barriers to adaptation, multiple response",Barrier: Lack of financial capital / formal credit,0 = Not selected; 1 = Selected
+E2,"Barriers to adaptation, multiple response",Barrier: High cost of modern safety equipment,0 = Not selected; 1 = Selected
+E3,"Barriers to adaptation, multiple response",Barrier: Inaccurate or delayed weather signals,0 = Not selected; 1 = Selected
+E4,"Barriers to adaptation, multiple response",Barrier: Insufficient cyclone shelters in coastal villages,0 = Not selected; 1 = Selected
+E5,"Barriers to adaptation, multiple response",Barrier: Inadequate insurance cover for boat/gear loss,0 = Not selected; 1 = Selected
+E6,"Barriers to adaptation, multiple response",Barrier: High debt trap (Dadon system),0 = Not selected; 1 = Selected
+E7,"Barriers to adaptation, multiple response",Barrier: Inadequate government relief / safety net,0 = Not selected; 1 = Selected
+E8,"Barriers to adaptation, multiple response",Barrier: Poor river jetty / fish landing site infrastructure,0 = Not selected; 1 = Selected
+E9,"Barriers to adaptation, multiple response",Barrier: Lack of alternative vocational training,0 = Not selected; 1 = Selected

@@ -1,0 +1,15 @@
+# Generated outputs
+outputs/
+# Third-party data that may not be redistributed
+data/boundaries/*.json
+data/boundaries/*.zip
+data/bmd/*.csv
+data/ibtracs/*.csv
+# System and editor files
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/

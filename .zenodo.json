@@ -1,0 +1,31 @@
+{
+  "title": "Data and code for: Knowledge, perception, and adaptation of island fishers to climate change on Hatiya Island, Bangladesh",
+  "upload_type": "dataset",
+  "description": "<p>Anonymized household-survey data (n = 150 small-scale fishers, Hatiya Island, Bangladesh, August–November 2025), Landsat-derived shoreline polygons and area-change tables (1996–2025), an IBTrACS v04r01 snapshot, and the R, Python and Google Earth Engine code that reproduce all statistics, tables and figures of the associated manuscript. Bangladesh Meteorological Department station data are not redistributed; see data/bmd/README.md. Code is released under the MIT Licence and data produced by the authors under CC BY 4.0.</p>",
+  "creators": [
+    {
+      "name": "Rabbi, Md Siful Islam",
+      "affiliation": "Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali, Bangladesh",
+      "orcid": "0009-0008-3516-4626"
+    },
+    {
+      "name": "Parven, Afshana",
+      "affiliation": "Department of Fisheries and Marine Science, Noakhali Science and Technology University, Noakhali, Bangladesh",
+      "orcid": "0000-0003-0415-101X"
+    }
+  ],
+  "keywords": [
+    "climate-change perception",
+    "local ecological knowledge",
+    "small-scale fisheries",
+    "adaptation",
+    "shoreline change",
+    "tropical cyclones",
+    "Hatiya Island",
+    "Bangladesh"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0.0"
+}

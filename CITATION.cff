@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use these data or code, please cite this archive."
 title: "Data and code for: Knowledge, perception, and adaptation of island fishers to climate change on Hatiya Island, Bangladesh"
-version: 1.0.0
+version: 1.0.1
 license: CC-BY-4.0
 type: dataset
 authors:
@@ -23,3 +23,4 @@ keywords:
   - tropical cyclones
   - Hatiya Island
   - Bangladesh
+repository-code: "https://github.com/sifulrabbi2071/hatiya-fishers-climate-perception"

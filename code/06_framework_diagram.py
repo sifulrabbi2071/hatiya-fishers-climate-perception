@@ -41,4 +41,6 @@ arrow(25, 25.5, 38, 22.8, BL); arrow(75, 25.5, 62, 22.8, GR)
 box(10, 0.3, 80, 9.6, "Interpretation and synthesis", "Reliability of local knowledge; erosive coping and maladaptation;\nstructural barriers; implications for coastal adaptation policy", PU, "#efe9f6", PU)
 arrow(50, 12.5, 50, 10.2, GD)
 import os; os.makedirs("outputs/figures", exist_ok=True)
-fig.savefig("outputs/figures/Fig2.tif", dpi=600, pil_kwargs={"compression": "tiff_lzw"})
+matplotlib.rcParams["pdf.fonttype"] = 42
+fig.savefig("outputs/figures/Figure_2.pdf")
+fig.savefig("outputs/figures/Figure_2.tif", dpi=1000, pil_kwargs={"compression": "tiff_lzw"})

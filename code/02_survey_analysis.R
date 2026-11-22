@@ -9,7 +9,7 @@
 #             and Figs 3, 4, 5, 7 and 8 (Figs 1, 2 and 6 are maps/diagrams).
 # ----------------------------------------------------------------------------
 # INPUT : data/survey/hatiya_fishers_survey_2025.sav
-# OUTPUT: outputs/figures/Fig3.tif, Fig4.tif, Fig5.tif, Fig7.tif, Fig8.tif (600 dpi) and console tables
+# OUTPUT: outputs/figures/Figure_3.tif, Figure_4.tif, Figure_5.tif, Figure_7.tif, Figure_8.tif (600 dpi) and console tables
 # Figures carry no in-figure titles; captions are given in the manuscript.
 # ============================================================================
 
@@ -109,7 +109,7 @@ f3 <- ggplot(lek_s, aes(reorder(str_wrap(paste0(label, " (", item, ")"), 45), me
   geom_hline(yintercept = 3, linetype = "dashed", colour = "grey40") +
   coord_flip(ylim = c(1, 5.05), expand = FALSE) +
   labs(x = NULL, y = "Mean agreement\n(1 = strongly disagree ... 5 = strongly agree)")
-save_fig(f3, "Fig3.tif", 8, 5.5)
+save_fig(f3, "Figure_3.tif", 8, 5.5)
 
 ## ---- 6. Fig 4. CPI % agreeing ---------------------------------------------
 f4 <- ggplot(cpi_s, aes(reorder(str_wrap(label, 45), agree), agree)) +
@@ -117,7 +117,7 @@ f4 <- ggplot(cpi_s, aes(reorder(str_wrap(label, 45), agree), agree)) +
   geom_text(aes(label = sprintf("%.0f%%", agree)), hjust = -0.15, size = 3.3) +
   coord_flip(ylim = c(0, 100)) +
   labs(x = NULL, y = "% agreeing / strongly agreeing")
-save_fig(f4, "Fig4.tif", 8, 5.5)
+save_fig(f4, "Figure_4.tif", 8, 5.5)
 
 ## ---- 7. Fig 5. Perception vs observed record -------------------------------
 # Verdicts follow the comparison in Table 4 of the manuscript.
@@ -134,7 +134,7 @@ f5 <- ggplot(conv, aes(reorder(hazard, perc), perc, fill = verdict)) +
                                "Divergence" = "#D55E00"), name = NULL, drop = FALSE) +
   coord_flip(ylim = c(0, 100)) +
   labs(x = NULL, y = "% of fishers perceiving the change")
-save_fig(f5, "Fig5.tif", 8, 4.6)
+save_fig(f5, "Figure_5.tif", 8, 4.6)
 
 ## ---- 8. Fig 7. Adaptation strategies --------------------------------------
 asi_s$type <- ifelse(asi_s$item %in% c("D5", "D7", "D9"),
@@ -146,7 +146,7 @@ f6 <- ggplot(asi_s, aes(reorder(str_wrap(label, 45), mean), mean, fill = type)) 
   geom_hline(yintercept = 3, linetype = "dashed", colour = "grey40") +
   coord_flip(ylim = c(1, 5.05), expand = FALSE) +
   labs(x = NULL, y = "Mean frequency (1 = never ... 5 = always)")
-save_fig(f6, "Fig7.tif", 8.5, 5.5)
+save_fig(f6, "Figure_7.tif", 8.5, 5.5)
 
 ## ---- 9. Fig 8. Barriers -----------------------------------------------------
 barb <- data.frame(item  = bar,
@@ -159,7 +159,7 @@ f7 <- ggplot(barb, aes(reorder(str_wrap(label, 45), pct), pct)) +
   geom_text(aes(label = sprintf("%.0f%%", pct)), hjust = -0.15, size = 3.3) +
   coord_flip(ylim = c(0, 100)) +
   labs(x = NULL, y = "% of respondents reporting barrier")
-save_fig(f7, "Fig8.tif", 8, 5)
+save_fig(f7, "Figure_8.tif", 8, 5)
 
 ## ---- 10. Table 5. Binary logistic regression ------------------------------
 d$ASI_total  <- rowSums(d[asi])

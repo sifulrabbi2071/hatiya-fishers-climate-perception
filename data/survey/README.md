@@ -12,6 +12,8 @@ Bangladesh, conducted face to face in Bengali between August and November 2025.
 The questionnaire is in `docs/questionnaire_english.pdf`. Interviews were conducted in Bengali
 using a translation of this English version.
 
+The study protocol was reviewed and approved by the Noakhali Science and Technology University Ethical Committee (NSTUEC; Ref. NSTU/SCI/EC/2025/478(A), 23 November 2025). Because the survey was conducted before approval was granted, the approval was retrospective.
+
 ## Anonymization
 
 No names, phone numbers, addresses, GPS positions or photographs were recorded. The paper

@@ -20,11 +20,11 @@ with the observed record of temperature, rainfall, tropical cyclones, shoreline 
 ├── requirements.txt           Python packages used
 ├── code/
 │   ├── 01_shoreline_gee.js        Landsat shoreline analysis (Google Earth Engine)
-│   ├── 02_survey_analysis.R       Survey statistics, reliability, regression; Figs 3–5, 7, 8
+│   ├── 02_survey_analysis.R       Survey statistics, reliability, regression; Figures 3–5, 7, 8
 │   ├── 03_climate_trends.R        Mann–Kendall, Theil–Sen and PCI for BMD station data
 │   ├── 04_cyclones_ibtracs.R      Cyclone counts and trends within 100 and 200 km
-│   ├── 05_maps_shoreline.py       Study-area map (Fig. 1) and shoreline-change figure (Fig. 6)
-│   └── 06_framework_diagram.py    Methodological framework (Fig. 2)
+│   ├── 05_maps_shoreline.py       Study-area map (Figure 1) and shoreline change (Figure 6)
+│   └── 06_framework_diagram.py    Methodological framework (Figure 2, PDF and TIFF)
 ├── data/
 │   ├── survey/        Anonymized questionnaire data, codebook
 │   ├── shoreline/     Island polygons, area-change table, Landsat scene list (GEE exports)
@@ -99,6 +99,17 @@ Figure appearance can differ slightly with the installed fonts; the numbers do n
 
 The survey contains no names, contact details, locations or photographs. Participation was
 voluntary and verbal informed consent was obtained before each interview.
+The study protocol was reviewed and approved by the Noakhali Science and Technology University
+Ethical Committee (NSTUEC; Ref. NSTU/SCI/EC/2025/478(A), 23 November 2025). Because the survey
+was conducted before approval was granted, the approval was retrospective.
+
+## Version history
+
+- **v1.0.1** (November 2026): Figure 1 now shows the study area only (the extent of the shoreline
+  analysis); Figure 6 uses colour-blind-safe colours (orange = erosion, blue = accretion); larger
+  figure text; Figure 2 is also written as a vector PDF; figure files are named `Figure_1` … `Figure_8`;
+  ethics approval added to this README. Data and all numerical results are unchanged.
+- **v1.0.0** (November 2026): first release.
 
 ## Licence
 
@@ -112,7 +123,7 @@ voluntary and verbal informed consent was obtained before each interview.
 If you use these data or code, please cite this archive (and the manuscript above once it is published):
 
 > Rabbi MSI, Parven A (2026). Data and code for: Knowledge, perception, and adaptation of island
-> fishers to climate change on Hatiya Island, Bangladesh (v1.0.0) [Data set and software]. Zenodo.
+> fishers to climate change on Hatiya Island, Bangladesh (v1.0.1) [Data set and software]. Zenodo.
 
 The DOI is shown on the Zenodo record; the "Cite as" box there gives the citation in other styles.
 

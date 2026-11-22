@@ -2,7 +2,7 @@
 Hatiya Island — study-area map (Fig. 1) and shoreline-change figure (Fig. 6).
 Inputs : GADM v4.1 Bangladesh boundaries (downloaded to data/boundaries/ on first run),
          GEE exports in data/shoreline/ (island polygons and hatiya_area_change.csv)
-Outputs: outputs/figures/Fig1.tif, Fig6.tif (600 dpi, 174 mm wide, no in-figure titles)
+Outputs: outputs/figures/Figure_1.tif (90 mm wide) and Figure_6.tif (174 mm wide), 600 dpi, no in-figure titles
 Requires: Python >= 3.9, geopandas, pandas, numpy, matplotlib
           (pip install geopandas matplotlib). GADM files are downloaded on first run.
 Run from the repository root:  python3 code/05_maps_shoreline.py
@@ -18,14 +18,14 @@ plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "
                      "axes.linewidth": 0.6, "xtick.major.width": 0.6, "ytick.major.width": 0.6})
 MM = 1 / 25.4
 UTM = 32646
-C_STABLE, C_ERO, C_ACC = "#d9cfc1", "#C0392B", "#2E8B57"
+C_STABLE, C_ERO, C_ACC = "#d9cfc1", "#D55E00", "#0072B2"  # Okabe–Ito (colour-blind safe)
 WATER, LAND = "#e6f0f7", "#ececec"
 
 def deg_ticks(ax, xt, yt):
     ax.set_xticks(xt); ax.set_yticks(yt)
     ax.set_xticklabels([f"{x:.1f}°E" if abs(x*10-round(x*10))<1e-6 else f"{x:.2f}°E" for x in xt])
     ax.set_yticklabels([f"{y:.1f}°N" if abs(y*10-round(y*10))<1e-6 else f"{y:.2f}°N" for y in yt])
-    ax.tick_params(length=2, pad=1.5, labelsize=6.5)
+    ax.tick_params(length=2, pad=1.5, labelsize=7)
     ax.set_xlabel(""); ax.set_ylabel("")
 
 def scalebar(ax, x0, y0, km, lat):
@@ -33,10 +33,10 @@ def scalebar(ax, x0, y0, km, lat):
     ax.add_patch(Rectangle((x0, y0), dlon / 2, dlon * 0.04, fc="k", ec="k", lw=0.5))
     ax.add_patch(Rectangle((x0 + dlon / 2, y0), dlon / 2, dlon * 0.04, fc="w", ec="k", lw=0.5))
     for f, t in [(0, "0"), (0.5, f"{km/2:g}"), (1, f"{km:g} km")]:
-        ax.text(x0 + f * dlon, y0 + dlon * 0.07, t, ha="center", va="bottom", fontsize=6)
+        ax.text(x0 + f * dlon, y0 + dlon * 0.07, t, ha="center", va="bottom", fontsize=7)
 
 def north(ax, x, y, size):
-    ax.annotate("N", xy=(x, y), xytext=(x, y - size), ha="center", va="center", fontsize=7, fontweight="bold",
+    ax.annotate("N", xy=(x, y), xytext=(x, y - size), ha="center", va="center", fontsize=7.5, fontweight="bold",
                 arrowprops=dict(arrowstyle="-|>", lw=0.8, color="k"))
 
 # GADM v4.1 boundaries for Bangladesh (downloaded once if not present)
@@ -51,43 +51,26 @@ g2 = gpd.read_file("data/boundaries/gadm41_BGD_2.json")
 g3 = gpd.read_file("data/boundaries/gadm41_BGD_3.json")
 isl = {y: gpd.read_file(f"data/shoreline/hatiya_island_{y}.shp").to_crs(4326) for y in ["1996", "2025"]}
 
-# ------------------------------------------------------------------ Fig. 1
-fig = plt.figure(figsize=(174 * MM, 105 * MM))
-axA = fig.add_axes([0.04, 0.08, 0.40, 0.88]); axB = fig.add_axes([0.53, 0.08, 0.45, 0.88])
-for ax in (axA, axB): ax.set_facecolor(WATER)
-g2.plot(ax=axA, color=LAND, edgecolor="#9a9a9a", lw=0.25)
-g2[g2.NAME_2 == "Noakhali"].plot(ax=axA, color="#f2c48d", edgecolor="#9a9a9a", lw=0.25)
-axA.add_patch(Rectangle((90.85, 21.95), 0.5, 0.7, fill=False, ec="red", lw=0.9))
-axA.set_xlim(88.0, 92.75); axA.set_ylim(20.55, 26.7); axA.set_aspect(1 / np.cos(np.radians(23.5)))
-deg_ticks(axA, [89, 90, 91, 92], [21, 22, 23, 24, 25, 26])
-axA.text(90.1, 21.1, "Bay of Bengal", fontsize=7, style="italic", ha="center", color="#2b5d7d")
-axA.text(88.25, 26.45, "(a)", fontsize=8, fontweight="bold")
-axA.legend(handles=[Patch(fc="#f2c48d", ec="#9a9a9a", lw=0.3, label="Noakhali District"),
-                    Patch(fill=False, ec="red", label="Extent of panel (b)")],
-           loc="lower left", fontsize=6, frameon=True, framealpha=0.9, borderpad=0.4)
-scalebar(axA, 91.35, 20.75, 100, 21)
-north(axA, 92.45, 26.45, 0.35)
-
-ext = (90.85, 91.35, 21.90, 22.65)
+# ------------------------------------------------------------------ Fig. 1 (study area only)
+ext = (90.93, 91.27, 22.00, 22.50)   # same bounding box as the shoreline analysis (AOI)
+fig = plt.figure(figsize=(90 * MM, 120 * MM))
+axB = fig.add_axes([0.16, 0.06, 0.80, 0.91]); axB.set_facecolor(WATER)
 ctx = g3.cx[ext[0]:ext[1], ext[2]:ext[3]]
 ctx[ctx.NAME_3 != "Hatiya"].plot(ax=axB, color=LAND, edgecolor="#b5b5b5", lw=0.3)
 ctx[ctx.NAME_3 == "Hatiya"].plot(ax=axB, color="#f7e9d4", edgecolor="#b5b5b5", lw=0.3)
 isl["2025"].plot(ax=axB, color="#7fb27f", edgecolor="#2f6b2f", lw=0.5)
-axB.set_xlim(ext[0], ext[1]); axB.set_ylim(ext[2], ext[3]); axB.set_aspect(1 / np.cos(np.radians(22.3)))
-deg_ticks(axB, [90.9, 91.0, 91.1, 91.2, 91.3], [21.9, 22.0, 22.1, 22.2, 22.3, 22.4, 22.5, 22.6])
-for (x, y, t, s) in [(91.105, 22.25, "Hatiya\n(study area)", "normal"), (90.935, 22.17, "Manpura\n(Bhola)", "normal"),
-                     (91.265, 22.6, "Noakhali\nmainland", "normal"), (91.17, 21.95, "Bay of Bengal", "italic"),
-                     (91.0, 22.30, "Meghna\nestuary", "italic"), (91.02, 22.005, "Nijhum Dwip", "normal")]:
-    axB.text(x, y, t, fontsize=6.5, ha="center", va="center", style=s,
-             color="#2b5d7d" if s == "italic" else "k")
-axB.text(ext[0] + 0.01, ext[3] - 0.03, "(b)", fontsize=8, fontweight="bold")
+axB.set_xlim(ext[0], ext[1]); axB.set_ylim(ext[2], ext[3]); axB.set_aspect(1 / np.cos(np.radians(22.25)))
+deg_ticks(axB, [91.0, 91.1, 91.2], [22.0, 22.1, 22.2, 22.3, 22.4, 22.5])
+for (x, y, t, s) in [(91.105, 22.25, "Hatiya\n(study area)", "normal"), (90.985, 22.30, "Meghna\nestuary", "italic"),
+                     (91.20, 22.03, "Bay of Bengal", "italic"), (91.03, 22.035, "Nijhum Dwip", "normal")]:
+    axB.text(x, y, t, fontsize=7.5, ha="center", va="center", style=s, color="#2b5d7d" if s == "italic" else "k")
 axB.legend(handles=[Patch(fc="#7fb27f", ec="#2f6b2f", lw=0.5, label="Island footprint 2025 (Landsat)"),
                     Patch(fc="#f7e9d4", ec="#b5b5b5", lw=0.3, label="Hatiya Upazila (GADM)"),
                     Patch(fc=LAND, ec="#b5b5b5", lw=0.3, label="Other land (GADM)")],
-           loc="upper left", bbox_to_anchor=(0.0, 0.94), fontsize=5.8, frameon=True, framealpha=0.95, borderpad=0.4)
-scalebar(axB, 90.87, 21.925, 10, 21.93)
-north(axB, 91.32, 22.62, 0.04)
-fig.savefig("outputs/figures/Fig1.tif", dpi=600, pil_kwargs={"compression": "tiff_lzw"})
+           loc="upper left", fontsize=7, frameon=True, framealpha=0.95, borderpad=0.4)
+scalebar(axB, 91.17, 22.075, 10, 22.07)
+north(axB, 91.25, 22.485, 0.035)
+fig.savefig("outputs/figures/Figure_1.tif", dpi=600, pil_kwargs={"compression": "tiff_lzw"})
 plt.close(fig)
 
 # ------------------------------------------------------------------ Fig. 6
@@ -105,8 +88,8 @@ deg_ticks(axA, [91.0, 91.05, 91.1, 91.15, 91.2], [22.1, 22.2, 22.3, 22.4])
 axA.legend(handles=[Patch(fc=C_STABLE, label=f"Stable ({area['Stable']:.1f} km²)"),
                     Patch(fc=C_ERO, label=f"Eroded ({area['Eroded']:.1f} km²)"),
                     Patch(fc=C_ACC, label=f"Accreted ({area['Accreted']:.1f} km²)")],
-           loc="upper right", fontsize=6.3, frameon=True, framealpha=0.95, title="1996–2025", title_fontsize=6.5)
-axA.text(90.987, 22.44, "(a)", fontsize=8, fontweight="bold")
+           loc="upper right", fontsize=7, frameon=True, framealpha=0.95, title="1996–2025", title_fontsize=7.5)
+axA.text(90.987, 22.44, "(a)", fontsize=9, fontweight="bold")
 scalebar(axA, 90.99, 22.072, 5, 22.07)
 north(axA, 90.99, 22.415, 0.02)
 
@@ -127,14 +110,14 @@ for j, (col, c, name) in enumerate([("erosion_rate_km2_yr", C_ERO, "Erosion"), (
 net = [get(0, f, t, "net_rate_km2_yr") for f, t in iv]
 axB.plot(x, net, "D", color="k", ms=4, label="Net change", zorder=5)
 axB.axhline(0, color="k", lw=0.5)
-axB.set_xticks(x); axB.set_xticklabels(lab, fontsize=7)
-axB.set_ylabel(r"Rate of change (km$^{2}$ yr$^{-1}$)", fontsize=7.5, fontweight="bold")
-axB.tick_params(labelsize=6.5, length=2)
+axB.set_xticks(x); axB.set_xticklabels(lab, fontsize=7.5)
+axB.set_ylabel(r"Rate of change (km$^{2}$ yr$^{-1}$)", fontsize=8, fontweight="bold")
+axB.tick_params(labelsize=7, length=2)
 axB.spines[["top", "right"]].set_visible(False)
-axB.legend(fontsize=6.3, frameon=False, loc="upper right")
+axB.legend(fontsize=7, frameon=False, loc="upper right")
 axB.set_ylim(-5.8, 5.2)
-axB.text(-0.55, 5.45, "(b)", fontsize=8, fontweight="bold")
-fig.savefig("outputs/figures/Fig6.tif", dpi=600, pil_kwargs={"compression": "tiff_lzw"})
+axB.text(-0.55, 5.45, "(b)", fontsize=9, fontweight="bold")
+fig.savefig("outputs/figures/Figure_6.tif", dpi=600, pil_kwargs={"compression": "tiff_lzw"})
 plt.close(fig)
 print({k: round(v, 2) for k, v in area.items()})
 
